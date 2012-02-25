@@ -1,0 +1,14 @@
+##KONNF##
+
+Z tego co pamiêtam wiadomoœæ ma mieæ NET = net_konnferencja,
+ poprzez SetExtParam w pole Display ustawiamy nazwe kontaktu mówi¹cego, a uid konnferencji zapisujemy w formacie
+Kod:
+1234;4123;312312@10
+(@10 to zapis, ¿e dotyczy sieci GG) 
+
+
+##SMS##
+rozni sie tym, ze podajesz mu katalog z smsami, jako typ wiadomosci MT_SMS i poradzi sobie bez problemu
+
+co ja jeszcze. ach. szukaæ usera po numerze komórki i NET_SMS?
+a usera szukasz po numerze komorki jako polu

@@ -1,0 +1,62 @@
+[a2e]
+
+was
+
+			if(it->was_sent) printf("chatsend,%d,,%d", 
+				*it->to.begin(), it->sent);
+is
+			if(it->was_sent) printf("chatsend,%s,,%d", 
+				it->to.begin()->c_str(), it->sent);
+
+[arch_file] overrwritten
+
+[gg]
+
+in load add 
+	ignored_count =0;
+
+in load_section_data add
+	ignored_count++;
+before continue
+
+in read_text add
+	ignored_count++;
+before both return false;
+
+in read_sms add
+	ignored_count++;
+before both return false;
+
+[gg.h]
+
+in beggining, add
+	#ifndef _GG_H_
+	#define _GG_H_ 1
+before private, add
+	int get_ignored_count();
+
+
+change end
+from
+	};
+to
+	int ignored_count;
+	};
+	#endif
+
+[ggfix]
+
+file added
+
+[main]
+
+list iterator type changed to <string>
+
+printf changed from
+	printf("%7d", *lit);
+to
+	printf("%s", lit->c_str());
+
+section[1] is messsages
+section[2] is sms
+
